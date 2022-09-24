@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { MantineProvider } from '@mantine/core'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider
       withGlobalStyles
@@ -22,5 +22,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </MantineProvider>
   )
 }
-
-export default MyApp
