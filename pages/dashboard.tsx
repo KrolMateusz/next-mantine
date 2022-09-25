@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import { createStyles, Button } from '@mantine/core';
+import Header, { Link } from '../components/Header';
 
 const useStyles = createStyles((theme, _params, getRef) => ({
     header: {
@@ -13,12 +14,24 @@ const useStyles = createStyles((theme, _params, getRef) => ({
 
 const Dashboard: NextPage = () => {
     const { classes } = useStyles();
+    const links: Link[] = [
+        {
+            label: 'Google',
+            link: 'https://www.google.com/'
+        },
+        {
+            label: 'Facebook',
+            link: 'https://www.facebook.com/'
+        },
+    ]
+
     return (
         <>
-            <h1 className={classes.header}>Welcome back Alexandru!</h1>
+            {/* <h1 className={classes.header}>Welcome back Alexandru!</h1>
             <Button className={classes.button} radius="xl" size="md">
                 Hello World
-            </Button>
+            </Button> */}
+            <Header links={links} />
         </>
     )
 }

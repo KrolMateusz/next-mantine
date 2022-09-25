@@ -142,6 +142,13 @@
     react-popper "^2.2.5"
     react-textarea-autosize "^8.3.2"
 
+"@mantine/ds@^5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@mantine/ds/-/ds-5.4.1.tgz#2041fbf527d2089df760d6a263a1fad08a6392cc"
+  integrity sha512-SXqdNQ35dIjrkhqSKiWRFEtIEVvgN3Y8LSe8lgdF14aZ1g2RDgRKRJgCfDvxZxrFQEJovr1BLxxMruDD50vNTA==
+  dependencies:
+    "@mantine/utils" "5.4.1"
+
 "@mantine/hooks@^4.1.4":
   version "4.2.12"
   resolved "https://registry.yarnpkg.com/@mantine/hooks/-/hooks-4.2.12.tgz#8dfbd23763959b721f5c5c784b3c412bb7c9823a"
@@ -179,6 +186,11 @@
     "@emotion/utils" "1.0.0"
     clsx "^1.1.1"
     csstype "3.0.9"
+
+"@mantine/utils@5.4.1":
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.4.1.tgz#06242925933faeca619b28e74d58a63ce94567c8"
+  integrity sha512-yaZ7gv9dkr98L65EjaAniZmJpVEPzHbe5aDDljIePLgcU5hVCdUls2v31YXslTf1/CJ5yZp/L7LPYLN86EXlEA==
 
 "@next/env@12.3.1":
   version "12.3.1"
@@ -351,6 +363,11 @@
   integrity sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw==
   dependencies:
     tslib "^2.4.0"
+
+"@tabler/icons@^1.100.0":
+  version "1.100.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-1.100.0.tgz#920b2f8169a46f7ba4c75ce7ff914b4664045e8c"
+  integrity sha512-zEKXzqsWu4AJF1OBTIRPzYPU0oRu1/fWoLXHOe0mf6KPcw19HZMlTzT9arDem3gFMbTJjkUX5eoVafcGVIN7kQ==
 
 "@types/node@17.0.25":
   version "17.0.25"
