@@ -17,8 +17,8 @@ const useStyles = createStyles((theme) => ({
     color: theme.white,
     backgroundColor: theme.colors.blue[ 0 ]
   },
-  chevronRotated: {
-    transform: 'rotate(180deg)',
+  chevron: {
+    transition: 'transform 300ms ease'
   }
 }));
 
@@ -48,7 +48,7 @@ export default function Header({ links }: HeaderSearchProps) {
         <Group spacing={'lg'}>
         <IconBell />
         <Avatar className={classes.avatar} radius="xl">MK</Avatar>
-        <IconChevronDown className={`${isChevronOpened ? classes.chevronRotated : ''}`} onClick={toggleChevron} />
+        <IconChevronDown style={{ transform: isChevronOpened ? `rotate(180deg)` : 'none' }} className={classes.chevron} onClick={toggleChevron} />
         </Group>
       </div>
     </MHeader>
