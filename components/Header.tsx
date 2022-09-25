@@ -3,6 +3,11 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconBrandGithub, IconBell, IconChevronDown } from '@tabler/icons'
 
 const useStyles = createStyles((theme) => ({
+    header: {
+        color: theme.white,
+        backgroundColor: theme.colors.blue[ 1 ],
+        borderBottom: 'none'
+    },
   inner: {
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
@@ -10,8 +15,6 @@ const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    color: theme.white,
-    backgroundColor: theme.colors.blue[ 1 ],
   },
   avatar: {
     color: theme.white,
@@ -37,7 +40,7 @@ export default function Header({ links }: HeaderSearchProps) {
   const { classes } = useStyles();
 
   return (
-    <MHeader height={56} mb={120}>
+    <MHeader className={classes.header} height={56}>
       <div className={classes.inner}>
         <Group>
           <IconBrandGithub />

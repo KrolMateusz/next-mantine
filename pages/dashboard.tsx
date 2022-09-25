@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { createStyles, Button } from '@mantine/core';
 import Header, { Link } from '../components/Header';
+import Sidebar from '../components/Sidebar'
 
 const useStyles = createStyles((theme, _params, getRef) => ({
     header: {
@@ -32,6 +33,7 @@ const Dashboard: NextPage = () => {
                 Hello World
             </Button> */}
             <Header links={links} />
+            <Sidebar />
         </>
     )
 }
