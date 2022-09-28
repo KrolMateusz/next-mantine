@@ -5,7 +5,8 @@ import { Navbar, Tooltip, UnstyledButton, createStyles, Stack } from '@mantine/c
 const useStyles = createStyles((theme) => ({
     navbar: {
         backgroundColor: theme.colors.blue[ 1 ],
-        borderRight: 'none'
+        borderRight: 'none',
+        position: 'fixed'
     },
   link: {
     width: 50,
@@ -64,13 +65,16 @@ const Sidebar = () => {
     ))
 
   return (
-    <Navbar className={classes.navbar} width={{ base: 90 }} p="md">
-        <Navbar.Section grow mt={50}>
-            <Stack justify='center' spacing={0}>
-                {links}
-            </Stack>
-        </Navbar.Section>
-    </Navbar>
+    <>
+        <Navbar className={classes.navbar} width={{ base: 90 }} p="md">
+            <Navbar.Section grow mt={50}>
+                <Stack justify='center' spacing={0}>
+                    {links}
+                </Stack>
+            </Navbar.Section>
+        </Navbar>
+        <div>ELOOO</div>
+    </>
   )
 }
 

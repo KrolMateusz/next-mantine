@@ -6,7 +6,8 @@ const useStyles = createStyles((theme) => ({
     header: {
         color: theme.white,
         backgroundColor: theme.colors.blue[ 1 ],
-        borderBottom: 'none'
+        borderBottom: 'none',
+        position: 'fixed'
     },
   inner: {
     paddingLeft: theme.spacing.md,
@@ -25,16 +26,7 @@ const useStyles = createStyles((theme) => ({
   }
 }));
 
-export interface Link {
-    link: string,
-    label: string
-}
-
-interface HeaderSearchProps {
-  links: Link[];
-}
-
-export default function Header({ links }: HeaderSearchProps) {
+export default function Header() {
   const [isBurgerOpened, { toggle: toggleBurger }] = useDisclosure(false);
   const [isChevronOpened, { toggle: toggleChevron }] = useDisclosure(false);
   const { classes } = useStyles();
