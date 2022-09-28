@@ -23,7 +23,9 @@ const Dashboard: NextPage = () => {
             <Button className={classes.button} radius="xl" size="md">
                 Hello World
             </Button> */}
-            <Layout />
+            <Layout>
+                <h1>ELO</h1>
+            </Layout>
         </>
     )
 }

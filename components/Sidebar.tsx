@@ -73,7 +73,6 @@ const Sidebar = () => {
                 </Stack>
             </Navbar.Section>
         </Navbar>
-        <div>ELOOO</div>
     </>
   )
 }
