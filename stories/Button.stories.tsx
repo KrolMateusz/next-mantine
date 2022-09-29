@@ -1,41 +1,46 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Button } from '@mantine/core';
 
-import { Button } from './Button';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Example/MantineButton',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    color: {
+      control: 'select',
+      options: [ 'dark', 'gray', 'red', 'pink', 'grape', 'violet', 'indigo', 'blue', 'cyan', 'teal', 'green', 'lime', 'yellow', 'orange' ],
+      default: 'blue'
+    },
   },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = ({ children, ...args }) => <Button {...args}>{ children }</Button>;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const Filled = Template.bind({});
+Filled.args = {
+  children: 'Filled'
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const Light = Template.bind({});
+Light.args = {
+  variant: 'light',
+  children: 'Light'
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
+export const Oultine = Template.bind({});
+Oultine.args = {
+  variant: 'outline',
+  children: 'Outline',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Default',
+  variant: 'default'
+};
+
+export const Subtle = Template.bind({});
+Subtle.args = {
+  variant: 'subtle',
+  children: 'Subtle'
 };
