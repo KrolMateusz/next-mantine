@@ -3,7 +3,7 @@ import { PasswordInput, TextInput, Checkbox, Button, Box , Group} from '@mantine
 import Layout from '../components/Layout'
 import { useForm } from '@mantine/form'
 
-const Login = () => {
+const Register = () => {
     const form = useForm({
         initialValues: {
             name: '',
@@ -72,4 +72,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register
