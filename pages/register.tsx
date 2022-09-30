@@ -1,10 +1,25 @@
 import React from 'react'
 import { PasswordInput, TextInput, Checkbox, Button, Box , Group} from '@mantine/core'
 import Layout from '../components/Layout'
-import { useForm } from '@mantine/form'
+import { useForm, zodResolver } from '@mantine/form'
+import { z } from 'zod'
+
+const schema = z
+    .object({
+        name: z.string().min(2, { message: 'Name should have at least 2 letters' }),
+        lastname: z.string().min(2, { message: 'Last name should have at least 2 letters' }),
+        email: z.string().email('Invalid email'),
+        password: z.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/, 'Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number'),
+        confirmPassword: z.string()
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+        message: "Passwords don't match",
+        path: [ "confirmPassword" ]
+    })
 
 const Register = () => {
     const form = useForm({
+        validate: zodResolver(schema),
         initialValues: {
             name: '',
             lastname: '',
@@ -12,13 +27,6 @@ const Register = () => {
             termsOfService: false,
             password: '',
             confirmPassword: '',
-        },
-        validate: {
-            name: (value) => (value && value.length >= 2 ? null : 'Minimum 2 letters'),
-            lastname: (value) => (value && value.length >= 2 ? null : 'Minimum 2 letters'),
-            email: (value) => (value && /^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-            password: (value) => (value && /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(value) ? null : 'Password must contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number'),
-            confirmPassword: (value, values) => value !== values.password ? 'Passwords did not match' : null,
         },
     })
 
